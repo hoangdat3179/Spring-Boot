@@ -1,6 +1,7 @@
 package vn.techmaster.myfirstweb.controller;
 
 import java.util.Calendar;
+import java.util.Random;
 
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -57,7 +58,12 @@ public class HomeController {
   @GetMapping("/random/{length}")
   @ResponseBody
   public String randomString(@PathVariable("length") int length) {
-    return "XXXmmmMmmWW";
+    String chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+		Random rnd = new Random();
+		StringBuilder sb = new StringBuilder(length);
+		for (int i = 0; i < length; i++)
+			sb.append(chars.charAt(rnd.nextInt(chars.length())));
+		return sb.toString();
   }
 
   @GetMapping("/add")
@@ -71,5 +77,6 @@ public class HomeController {
   public Message echoMessage(@RequestBody Message message){
     return message;
   }
+  
 
 }
