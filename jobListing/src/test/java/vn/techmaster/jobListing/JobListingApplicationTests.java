@@ -1,13 +1,13 @@
-package vn.techmaster.job;
+package vn.techmaster.jobListing;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class JobApplicationTests {
+class JobListingApplicationTests {
 
-    @Test
-    void contextLoads() {
-    }
+	@Test
+	void contextLoads() {
+	}
 
 }

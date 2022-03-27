@@ -1,14 +1,14 @@
-package vn.techmaster.job;
+package vn.techmaster.jobListing.location;
 
-public enum Location {
-    HaNoi ("Hà nội"),
+public enum location {
+    HaNoi ("Hà Nội"),
     HaiPhong ("Hải Phòng"),
     NamDinh ("Nam Định") ,
     NgheAn ("Nghệ An");
 
     private String value;
 
-    Location(String value) {
+    location(String value) {
         this.value = value;
     }
 
