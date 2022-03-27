@@ -1,6 +1,7 @@
 package vn.techmaster.job.controller;
 
 import org.springframework.web.bind.annotation.*;
+
 import vn.techmaster.job.Location;
 import vn.techmaster.job.dto.JobRequest;
 import vn.techmaster.job.model.Job;
@@ -18,9 +19,10 @@ public class JobController {
 
     public JobController() {
         jobs = new ConcurrentHashMap<String, Job>();
-        jobs.put("01", new Job("01", "dev spring", "Spring", Location.HaNoi, 2, 4, "jtfkf@gmail.com"));
-        jobs.put("02", new Job("02", "dev java", "Java", Location.HaiPhong, 6, 9, "jtfj@gmail.com"));
-        jobs.put("03", new Job("03", "dev c++", "C++", Location.NamDinh, 10, 13, "kghkgy@gmail.com"));
+        jobs.put("01", new Job("01", "Job1", "Job1", Location.HaNoi, 20, 40, "123abc@gmail.com"));
+        jobs.put("02", new Job("02", "Job2", "Job2", Location.HaiPhong, 60, 90, "abc123@gmail.com"));
+        jobs.put("03", new Job("03", "Job3", "Job3", Location.NamDinh, 100, 130, "qwert123@gmail.com"));
+        jobs.put("04", new Job("04", "Job4", "Job4", Location.HaNoi, 130, 160, "qwert123@gmail.com"));
     }
 
     @GetMapping
@@ -46,7 +48,6 @@ public class JobController {
     public Job updateJobById(@PathVariable("id") String id, @RequestBody JobRequest jobRequest) {
         Job updateJob = new Job(id, jobRequest.title(), jobRequest.description(), Location.HaiPhong,
                 jobRequest.min_salary(), jobRequest.max_salary(), jobRequest.email_to());
-        // books.put(id, updateBook);
         jobs.replace(id, updateJob);
         return updateJob;
     }
@@ -60,6 +61,29 @@ public class JobController {
     public List<Job> sortJobByLocation() {
         return jobs.values().stream()
                 .sorted(Comparator.comparing(Job::getLocation))
+                .collect(Collectors.toList());
+    }
+
+    @GetMapping(value = "/salary/{salary}")
+    public List<Job> getJobBySalary(@PathVariable("salary") int salary) {
+        return jobs.values().stream().filter(i -> (i.getMin_salary() <= (salary)) && (i.getMax_salary() >= (salary)))
+                .collect(Collectors.toList());
+    }
+
+    @GetMapping(value = "/keyword/{keyword}")
+    public List<Job> getListByKeyword(@PathVariable("keyword") String keyword) {
+        return jobs.values().stream()
+                .filter(i -> (i.getTitle().toLowerCase().contains(keyword.toLowerCase()))
+                        || (i.getDescription().toLowerCase().contains(keyword.toLowerCase())))
+                .collect(Collectors.toList());
+    }
+
+    @GetMapping(value = "/query?location={location}&keyword={keyword}")
+    public List<Job> getListByLocationAndKeyword(@RequestParam("location") String location,
+            @RequestParam("keyword") String keyword) {
+        return jobs.values().stream()
+                .filter(i -> ((i.getTitle().contains(keyword)) || (i.getDescription().contains(keyword)))
+                        && (i.getLocation().equals(location)))
                 .collect(Collectors.toList());
     }
 }

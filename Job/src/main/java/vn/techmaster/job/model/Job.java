@@ -5,8 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import vn.techmaster.job.Location;
 
-import java.util.Arrays;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,5 +16,5 @@ public class Job {
     private int min_salary ;
     private int max_salary ;
     private String email_to ;
-
+    
 }
