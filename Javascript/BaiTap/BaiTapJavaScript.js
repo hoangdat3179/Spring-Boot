@@ -42,7 +42,7 @@ function translate(message) {
     case "KR":
       return "안녕";
     default:
-      "";
+      return "";
   }
 }
 
