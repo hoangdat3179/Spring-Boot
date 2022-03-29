@@ -104,4 +104,4 @@ console.log(sortCount(products));
 function randomProduct(arr){
     return arr[Math.floor(Math.random()*arr.length)];
 }
-console.log(randomProduct(products));
+console.log(randomProduct(products))
