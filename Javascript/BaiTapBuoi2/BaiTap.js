@@ -71,15 +71,16 @@ function findByName(arr,name){
 console.log(findByName(products, "PRO"));
 
 // 6. Thêm 1 sản phẩm bất kỳ vào trong mảng product
-function addProduct() {
-  return products.push({
-    name: "Samsung S8+",
-    price: 15000000,
-    brand: "Samsung",
-    count: 3,
-  });
+function addProduct(name ,price,brand ,count) {
+  let items = {
+      name: name,
+      price: price,
+      brand: brand,
+      count: count,
+  };
+  products.push(items);
 }
-addProduct(products);
+addProduct("Samsung S20",20000000,"Samsung",5);
 console.log(products);
 // 7. Xóa tất cả sản phẩm của thương hiệu "Samsung" trong giỏ hàng
 function removeProduct(arr) {
@@ -95,13 +96,14 @@ function sortPrice(arr) {
 console.log(sortPrice(products));
 
 // 9. Sắp xếp giỏ hàng theo count giảm dần
+const productCopy = [...products];
 function sortCount(arr) {
     return arr.sort((a , b) => b.count-a.count);
   }
-console.log(sortCount(products));
+console.log(sortCount(productCopy));
 
 // 10. Lấy ra 2 sản phẩm bất kỳ trong giỏ hàng
 function randomProduct(arr){
-    return arr[Math.floor(Math.random()*arr.length)];
+  return arr.sort(() => 0.5 - Math.random()).slice(0,2);
 }
 console.log(randomProduct(products))
