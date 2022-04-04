@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Add employer</h1>
-  <form action="#" th:action="@{/employer/add}" th:object="${bmiRequest}" method="post">
-    <input type="text" placeholder="Your name" th:field="*{name}"/><br><br>
-    <input type="text" placeholder="Your email" th:field="*{email}"/><br><br>
-    <input type="text" placeholder="Your height" th:field="*{height}"/> (m)<br><br>
-    <input type="text" placeholder="Your weight" th:field="*{weight}"/> (kg)<br><br>
-    <button type="submit">Calculate BMI</button>
-  </form>
-  <br>
+    <body>
+      <h1>Add new Employer:</h1>
+      <form th:action="@{/employer/list}" method="POST" th:object="${Employer}">
+        Name: <input th:field="*{name}" /> <br />
+        <br />
+        Website: <input th:field="*{website}" /> <br />
+        <br />
+        Email: <input th:field="*{email}" /> <br />
+        <br />
+        Address: <input th:field="*{address}" /> <br />
+        <br />
 
-</body>
+        <input type="submit" value="Submit" />
+      </form>
+    </body>
+  </body>
 </html>
