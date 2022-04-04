@@ -1,6 +1,6 @@
 package vn.techmaster.jobListing.dto;
 
-import vn.techmaster.jobListing.location.location;
+import vn.techmaster.jobListing.location.Location;
 
-public record jobRequest(String title , String description , location location , int min_salary , int max_salary , String email_to) {
+public record JobRequest(String title , String description , Location location , int min_salary , int max_salary , String email_to) {
 }
