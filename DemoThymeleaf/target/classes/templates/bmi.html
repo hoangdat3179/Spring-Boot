@@ -9,10 +9,15 @@
    <h1>BMI index</h1>
   <form action="#" th:action="@{/bmi}" th:object="${bmiRequest}" method="post">
     <input type="text" placeholder="Your name" th:field="*{name}"/><br><br>
-    <input type="text" placeholder="Your website" th:field="*{website}"/><br><br>
     <input type="text" placeholder="Your email" th:field="*{email}"/><br><br>
-    <input type="text" placeholder="Your address" th:field="*{address}"/><br><br>
+    <input type="text" placeholder="Your height" th:field="*{height}"/> (m)<br><br>
+    <input type="text" placeholder="Your weight" th:field="*{weight}"/> (kg)<br><br>
     <button type="submit">Calculate BMI</button>
   </form>
+  <br>
+  <div>
+    BMI Index : <strong th:text="${bmiResult?.bmiIndex}"></strong><br>
+    Phân loại: <strong th:text="${bmiResult?.category}"></strong>
+  </div>
 </body>
 </html>

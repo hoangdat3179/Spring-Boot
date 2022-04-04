@@ -23,7 +23,7 @@ public class EmployerController {
 
     @RequestMapping("/add")
     public String insertCustomer(Model model) {
-        model.addAttribute("customer", new Employer());
+        model.addAttribute("customer", );
         return "/employer/add";
     }
 }
