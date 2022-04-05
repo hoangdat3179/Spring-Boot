@@ -1,5 +1,15 @@
 package vn.techmasterr.jobhunt.model;
 
-public record Employer(String name, String website, String email, String address) {
-    
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Employer {
+   private String name;
+   private String website; 
+   private String email; 
+   private String address;
 }
