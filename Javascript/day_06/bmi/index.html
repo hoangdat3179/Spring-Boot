@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+</head>
+<body>
+    <h1>BMI index</h1>
+    <input type="text" placeholder="Your height" th:field="*{height}"/> (m)<br><br>
+    <input type="text" placeholder="Your weight" th:field="*{weight}"/> (kg)<br><br>
+    <button id="Get" >Get</button>
+    <button id="Post" >Post</button>
+  <br>
+  <div>
+    BMI Index : <strong id="bmiResult"></strong><br>
+    Phân loại: <strong></strong>
+  </div>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>
