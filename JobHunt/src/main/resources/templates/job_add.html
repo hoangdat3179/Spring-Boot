@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+<body>
+      <h1>Add Job</h1>
+      <form action="#" th:action="@{/job/add}" th:object="${job}" method="post">
+        <select name="nationality" id="nationality">
+            <option 
+            th:each="emp:${employers}" 
+            th:text="${emp.name}" 
+            th:value="${emp.id}">China</option>
+          </select>
+        <input type="text" placeholder="Your title" th:field="*{title}"/><br><br>
+        <input type="text" placeholder="Your description" th:field="*{description}"/><br><br>         
+          <select name="city" id="city">
+            <option 
+            th:each="city:${citys}" 
+            th:text="${city.value}" 
+            th:value="${city.value}">China</option>
+          </select>
+          <br>
+          <br>
+        <button type="submit">Save</button>
+      </form>   
+</body>
+</html>

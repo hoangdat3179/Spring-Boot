@@ -8,14 +8,14 @@
 </head>
 <body>
     <h1>BMI index</h1>
-    <input type="text" placeholder="Your height" th:field="*{height}"/> (m)<br><br>
-    <input type="text" placeholder="Your weight" th:field="*{weight}"/> (kg)<br><br>
+    <input type="text" placeholder="Your height" id="height" /> (m)<br><br>
+    <input type="text" placeholder="Your weight" id="weight" /> (kg)<br><br>
     <button id="Get" >Get</button>
     <button id="Post" >Post</button>
   <br>
   <div>
-    BMI Index : <strong id="bmiResult"></strong><br>
-    Phân loại: <strong></strong>
+    BMI Index : <strong id="bmi-index"></strong><br>
+    Phân loại: 
   </div>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="./main.js"></script>
