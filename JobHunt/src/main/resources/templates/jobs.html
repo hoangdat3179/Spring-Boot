@@ -1,43 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        table, th, td, tr {
-          border: 1px solid black;
-        }
-        td {
-          padding-right: 30px;
-        }
-        </style>
+<head th:replace="template.html :: header('List Job')">
 </head>
 <body>
-    <h1>Employers</h1>
-    <h3><a href="/job/add">Thêm job</a></h3><br>
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Id</th>
-            <th scope="col">Employer</th>
-            <th scope="col">Title</th>
-            <th scope="col">Description</th>
-            <th scope="col">City</th>
-        </tr>
-        </thead>
-        <tbody>
-            <tr th:each="job, iStat:${jobs}">
-                <th scope="row" th:text="${iStat.index} +1"></th>
-                <td th:text="${job.id}"></td>
-                <td th:text="${job.emp_id}">Otto</td>
-                <td th:text="${job.title}">@mdo</td>
-                <td th:text="${job.description}">@mdo</td>
-                <td th:text="${job.city}">@mdo</td>
-              </tr>
-        </tbody>
-    </table>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">Home</a>
+    </div>
+  </nav>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Id</th>
+        <th scope="col">Employer</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">City</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="job, iStat:${jobs}">
+        <th scope="row" th:text="${iStat.index} +1"></th>
+        <td th:text="${job.id}"></td>
+        <td th:text="${job.emp_id}">Otto</td>
+        <td th:text="${job.title}">@mdo</td>
+        <td th:text="${job.description}">@mdo</td>
+        <td th:text="${job.city}">@mdo</td>
+        <td><a th:href="|/job/update/${job.id}|">Edit</a></td>
+        <td><a th:href="|/job/delete/${job.id}|">Delete</a></td>
+      </tr>
+    </tbody>
+  </table>
 </body>
 </html>

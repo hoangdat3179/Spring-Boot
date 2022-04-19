@@ -1,8 +1,5 @@
 package vn.techmaster.JobHunt.controller;
 
-import java.io.IOException;
-
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,10 +10,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import vn.techmaster.JobHunt.model.City;
 import vn.techmaster.JobHunt.model.Job;
-import vn.techmaster.JobHunt.request.EmployerRequest;
 import vn.techmaster.JobHunt.request.JobRequest;
 import vn.techmaster.JobHunt.respository.EmployerRepo;
 import vn.techmaster.JobHunt.respository.JobRepo;
@@ -42,38 +39,34 @@ public class JobController {
     }
 
     @GetMapping(value = "/add")
-    public String addJobForm(Model model) {
+    public String addJobForm(Model model,@RequestParam("emp_id") String emp_id) {
+        Job job =new Job();
+        job.setId(emp_id);
         model.addAttribute("employers", employerRepo.getAll());
-        model.addAttribute("job", new Job());
+        model.addAttribute("job", job);
         model.addAttribute("citys", City.values());
         return "job_add";
     }
 
     @PostMapping("/add")
     public String addJob(@ModelAttribute JobRequest jobRequest, BindingResult bindingResult, Model model) {
-      if (! bindingResult.hasErrors()) {
-        System.out.println(jobRequest);
-      }
+        if (!bindingResult.hasErrors()) {
+            System.out.println(jobRequest);
+        }
 
-      jobRepo.addJob(Job.builder().title(jobRequest.title())
-      .description(jobRequest.description()).build());
-      model.addAttribute("employers", employerRepo.getAll());
-      model.addAttribute("citys", City.values());
-      model.addAttribute("jobRequest", jobRequest);
-      return "redirect:/job";
+        jobRepo.addJob(Job.builder().emp_id(jobRequest.emp_id()).title(jobRequest.title())
+                .description(jobRequest.description()).city(jobRequest.city()).build());
+
+        model.addAttribute("employers", employerRepo.getAll());
+        model.addAttribute("citys", City.values());
+        model.addAttribute("jobRequest", jobRequest);
+        return "redirect:/job";
     }
 
     @GetMapping(value = "/delete/{id}")
-    public String deleteJobById(@PathVariable String id, Model model) {
+    public String deleteJobById(@PathVariable String id,Model model) {
         jobRepo.deleteById(id);
-        model.addAttribute("jobs", jobRepo.findById(id));
-        return "job_delete";
-    }
-
-    @GetMapping(value = "/update/{id}")
-    public String updateJobById(@PathVariable String id, Model model,Job job) {
-        jobRepo.update(job);
-        model.addAttribute("jobs", jobRepo.findById(id));
-        return "job_update";
+        model.addAttribute("job", jobRepo.findById(id));
+        return "redirect:/job";
     }
 }
