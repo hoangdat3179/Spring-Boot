@@ -1,5 +1,7 @@
 package vn.techmaster.JobHunt.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -39,8 +41,8 @@ public class JobController {
     }
 
     @GetMapping(value = "/add")
-    public String addJobForm(Model model,@RequestParam("emp_id") String emp_id) {
-        Job job =new Job();
+    public String addJobForm(Model model, @RequestParam("emp_id") String emp_id) {
+        Job job = new Job();
         job.setId(emp_id);
         model.addAttribute("employers", employerRepo.getAll());
         model.addAttribute("job", job);
@@ -49,22 +51,15 @@ public class JobController {
     }
 
     @PostMapping("/add")
-    public String addJob(@ModelAttribute JobRequest jobRequest, BindingResult bindingResult, Model model) {
-        if (!bindingResult.hasErrors()) {
-            System.out.println(jobRequest);
-        }
-
-        jobRepo.addJob(Job.builder().emp_id(jobRequest.emp_id()).title(jobRequest.title())
-                .description(jobRequest.description()).city(jobRequest.city()).build());
-
-        model.addAttribute("employers", employerRepo.getAll());
-        model.addAttribute("citys", City.values());
-        model.addAttribute("jobRequest", jobRequest);
+    public String addJob(@ModelAttribute("job") JobRequest jobRequest, BindingResult bindingResult, Model model,
+            String emp_id) {
+        jobRepo.addJob(Job.builder().id(jobRequest.id()).title(jobRequest.title()).description(jobRequest.description())
+                .city(jobRequest.city()).build());
         return "redirect:/job";
     }
 
     @GetMapping(value = "/delete/{id}")
-    public String deleteJobById(@PathVariable String id,Model model) {
+    public String deleteJobById(@PathVariable String id, Model model) {
         jobRepo.deleteById(id);
         model.addAttribute("job", jobRepo.findById(id));
         return "redirect:/job";

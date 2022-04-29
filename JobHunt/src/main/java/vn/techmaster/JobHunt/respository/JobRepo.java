@@ -4,6 +4,8 @@ import java.util.Collection;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.stereotype.Repository;
 
 import vn.techmaster.JobHunt.model.Job;
@@ -38,5 +40,4 @@ public class JobRepo {
     public void update(Job job) {
         jobs.put(job.getId(), job);
     }
-    
 }

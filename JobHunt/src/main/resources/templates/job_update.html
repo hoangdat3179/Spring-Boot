@@ -9,7 +9,7 @@
 <body>
       <h1>Add Job</h1>
       <form action="#" th:action="@{/job/update/${job.id}}" th:object="${job}" method="post">
-        <select name="employer" id="employer">
+        <select name="employer" id="employer" th:field="*{employer}">
             <option 
             th:each="emp:${employers}" 
             th:text="${emp.name}" 
@@ -17,7 +17,7 @@
           </select>
         <input type="text" placeholder="Your title" th:field="*{title}"/><br><br>
         <input type="text" placeholder="Your description" th:field="*{description}"/><br><br>         
-          <select name="city" id="city">
+          <select name="city" id="city" th:field="*{city}">
             <option 
             th:each="city:${citys}" 
             th:text="${city.value}" 
