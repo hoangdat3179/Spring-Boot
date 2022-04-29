@@ -25,13 +25,24 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav ml-auto">
             <li class="navbar-item">
+              <th:block th:if="${user == null}">
               <a href="/login" class="nav-link">Login</a>
+            </th:block>
             </li>
             <li class="navbar-item">
-              <a href="/logout" class="nav-link">Logout</a>
-            </li>
-            <li class="navbar-item">
+              <th:block th:if="${user == null}">
               <a href="/register" class="nav-link">Register</a>
+            </th:block>
+            </li>
+            <li class="navbar-item">
+              <th:block th:if="${user != null}">
+                <a href="/logout" th:text="|Logout as ${user.fullname}|" class="nav-link">Logout</a> 
+            </th:block>
+            </li>
+            <li class="navbar-item">
+              <th:block th:if="${user != null}">
+            <a href="/admin" class="nav-link" >Admin</a>
+            </th:block>
             </li>
           </ul>
         </div>
