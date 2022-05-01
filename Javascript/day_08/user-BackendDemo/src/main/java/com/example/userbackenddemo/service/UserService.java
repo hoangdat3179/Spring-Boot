@@ -6,7 +6,9 @@ import com.example.userbackenddemo.exception.NotFoundException;
 import com.example.userbackenddemo.mapper.UserMapper;
 import com.example.userbackenddemo.model.User;
 import com.example.userbackenddemo.request.CreateUserRequest;
+import com.example.userbackenddemo.request.UpdatePasswordRequest;
 import com.example.userbackenddemo.request.UpdateUserRequest;
+import com.example.userbackenddemo.utils.Utils;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -17,6 +19,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class UserService {
+    private Utils utils;
     private List<User> users;
 
     public UserService() {
@@ -99,5 +102,35 @@ public class UserService {
         user.setAddress(request.getAddress());
 
         return UserMapper.toUserDto(user);
+    }
+
+    public void updatePassword(int id, UpdatePasswordRequest request) {
+        // Kiểm tra ID
+        Optional<User> userOptional = findById(id);
+        if(userOptional.isEmpty()){
+            throw new NotFoundException("User with id " + id + " Not found");
+        }
+        User user = userOptional.get();
+        // Kiểm tra oldPassword
+        if(!user.getPassword().equals(request.getOldPassword())){
+            throw new BadRequestException("Mật khẩu cũ không đúng");
+        }
+        // Kiểm tra newPassword = oldPassword
+        if(request.getOldPassword().equals(request.getNewPassword())){
+            throw new BadRequestException("Mật khẩu mới không được giống mật khẩu cũ");
+        }
+        // Cập nhật password
+         user.setPassword(request.getNewPassword());
+    }
+
+    public String forgotPassword(int id ) {
+        Optional<User> userOptional = findById(id);
+        if(userOptional.isEmpty()){
+            throw new NotFoundException("User with id " + id + " Not found");
+        }
+
+        String newPassword = utils.genaratePassword(3);
+        userOptional.get().setPassword(newPassword);
+        return null ;
     }
 }

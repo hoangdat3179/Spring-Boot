@@ -9,6 +9,10 @@ const phoneEl = document.getElementById("phone");
 const passwordEl = document.getElementById("password");
 const btnSave = document.getElementById("btn-save");
 const btnBack = document.querySelector(".btn-back");
+const btnChangePassword = document.getElementById("btn-change-password");
+const oldPassword = document.getElementById("old-password");
+const newPassword = document.getElementById("new-password");
+
 
 btnBack.addEventListener("click", function () {
   //Điều hướng trong js
@@ -56,9 +60,29 @@ const renderDistrict = (arr) => {
   addressEl.innerHTML = html;
 };
 
+var myModal = new bootstrap.Modal(document.getElementById('modal-change-password'), {
+  keyboard: false
+})
+
+btnChangePassword.addEventListener("click", async function () {
+  try {
+    let res = await axios.put(`${API_URL}/users/${id}/update-password`, {
+      oldPassword : oldPassword.value,
+      newPassword : newPassword.value,
+    });
+    
+    alert("Cập nhật thành công")
+    myModal.hide();
+    if (res.data) {
+      window.location.href = "/";
+    }
+  } catch (error) {
+    alert(error.response.data.message);
+  }
+});
+
 const init = async () => {
     await getDistrict();
     await getUser(id);
 }
-
 init();
