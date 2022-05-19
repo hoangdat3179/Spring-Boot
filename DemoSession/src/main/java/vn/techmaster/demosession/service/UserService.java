@@ -6,7 +6,7 @@ import java.util.Optional;
 
 public interface UserService {
     public User login(String email, String password);
-    public boolean logout(String email);
+    public Boolean logout(String email);
     public User addUser(String fullname, String email, String password);
     public User addUserThenAutoActivate(String fullname, String email, String password);
     public Boolean activateUser(String activation_code);

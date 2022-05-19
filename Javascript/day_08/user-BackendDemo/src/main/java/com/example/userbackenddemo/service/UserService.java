@@ -1,25 +1,23 @@
 package com.example.userbackenddemo.service;
 
+import com.example.userbackenddemo.Utils.Utils;
 import com.example.userbackenddemo.dto.UserDto;
 import com.example.userbackenddemo.exception.BadRequestException;
 import com.example.userbackenddemo.exception.NotFoundException;
 import com.example.userbackenddemo.mapper.UserMapper;
 import com.example.userbackenddemo.model.User;
 import com.example.userbackenddemo.request.CreateUserRequest;
-import com.example.userbackenddemo.request.UpdatePasswordRequest;
+import com.example.userbackenddemo.request.UpdatePassWordRequest;
 import com.example.userbackenddemo.request.UpdateUserRequest;
-import com.example.userbackenddemo.utils.Utils;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.Random;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
+
 public class UserService {
-    private Utils utils;
+    private EmailService emailService;
     private List<User> users;
 
     public UserService() {
@@ -104,33 +102,48 @@ public class UserService {
         return UserMapper.toUserDto(user);
     }
 
-    public void updatePassword(int id, UpdatePasswordRequest request) {
-        // Kiểm tra ID
+    public UserDto updatePassword(int id, UpdatePassWordRequest request) {
+        // kiểm tra có tồn tại hay không
+
         Optional<User> userOptional = findById(id);
         if(userOptional.isEmpty()){
             throw new NotFoundException("User with id " + id + " Not found");
         }
+        // Kiểm tra oldPassWord có đúng không
+
         User user = userOptional.get();
-        // Kiểm tra oldPassword
-        if(!user.getPassword().equals(request.getOldPassword())){
-            throw new BadRequestException("Mật khẩu cũ không đúng");
+        if(!user.getPassword().equals(request.getOldPassWord())) {
+            throw new BadRequestException(" Mật khẩu cũ Không chính xác");
+
         }
-        // Kiểm tra newPassword = oldPassword
-        if(request.getOldPassword().equals(request.getNewPassword())){
-            throw new BadRequestException("Mật khẩu mới không được giống mật khẩu cũ");
+        // Kiểm tra oldPassWord == newPassWord không
+        if(request.getOldPassWord().equals(request.getNewPassWord())) {
+            throw new BadRequestException("Mật khẩu cũ không được giống mật khẩu mới") ;
         }
-        // Cập nhật password
-         user.setPassword(request.getNewPassword());
+        // Cập nhật newPassWord cho user tương ứng
+        user.setPassword(request.getNewPassWord());
+
+        return UserMapper.toUserDto(user);
     }
 
-    public String forgotPassword(int id ) {
+    public String fogotPassWord(int id) {
+        // kiểm tra user id có hay ko
         Optional<User> userOptional = findById(id);
         if(userOptional.isEmpty()){
             throw new NotFoundException("User with id " + id + " Not found");
         }
+        // Random chuỗi password mới cho user
+        String newPass = Utils.generatePassWord(3);
 
-        String newPassword = utils.genaratePassword(3);
-        userOptional.get().setPassword(newPassword);
-        return null ;
+        //lấy thông tin của user và đặt lại password mới cho user
+        User user = userOptional.get();
+        user.setPassword(newPass);
+
+        // Send mail
+        emailService.sendMail(user.getEmail(),"Đổi mật khẩu", "Mật khẩu mới của bạn là : " + newPass);
+
+        // Trả về thông tin password mới
+        return newPass;
     }
+
 }

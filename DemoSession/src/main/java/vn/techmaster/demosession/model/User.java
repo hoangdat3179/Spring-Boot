@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 @Builder
 public class User {
     private String id;
-    private String fullname;
+    private String fullName;
     private String email;
-    private String hashed_password;
+    private String haskPassWord;
     private State state;
 }

@@ -1,15 +1,12 @@
 package com.example.userbackenddemo.request;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+@AllArgsConstructor
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
-public class UpdatePasswordRequest {
-    private String oldPassword;
-    private String newPassword;
+public class UpdatePassWordRequest {
+    private String oldPassWord ;
+    private String newPassWord ;
 }

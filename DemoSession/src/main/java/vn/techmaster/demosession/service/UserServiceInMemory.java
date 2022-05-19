@@ -32,7 +32,7 @@ public class UserServiceInMemory implements UserService{
         }
 
         //Kiểm tra password
-        if (hashing.validatePassword(password, user.getHashed_password())) {
+        if (hashing.validatePassword(password, user.getHaskPassWord())) {
             return user;
         } else {
             throw new UserException("Password is incorrect");
@@ -41,7 +41,7 @@ public class UserServiceInMemory implements UserService{
 
 
     @Override
-    public boolean logout(String email) {
+    public Boolean logout(String email) {
         return false;
     }
 

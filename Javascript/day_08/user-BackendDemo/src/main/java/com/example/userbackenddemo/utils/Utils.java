@@ -1,28 +1,24 @@
-package com.example.userbackenddemo.utils;
+package com.example.userbackenddemo.Utils;
 
 import org.apache.commons.lang3.RandomStringUtils;
-
-import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 
 public class Utils {
 
-
-    public String genaratePassword(int count){
-        return RandomStringUtils.random(count,false,true);
+    public static String generatePassWord (int count) {
+        return RandomStringUtils.random(count,false,true) ;
     }
+    public static String getFileExtension(String fileName) {
 
-    public static String getFileExtension(File file) {
-        String name = file.getName();
-        int lastIndexOf = name.lastIndexOf(".");
+        int lastIndexOf = fileName.lastIndexOf(".");
         if (lastIndexOf == -1) {
             return ""; // empty extension
         }
-        return name.substring(lastIndexOf);
+        return fileName.substring(lastIndexOf + 1);
     }
-    public static boolean checkFileExtension(String fileExtention){
-        List<String> fileExtentions = Arrays.asList("png","jpg","jpeg");
-        return fileExtentions.contains(fileExtention);
+    public static boolean checkFileExtension (String fileExtension) {
+        List<String> fileExtensions = Arrays.asList("png" , "jpg" , "jpeg") ;
+        return fileExtensions.contains(fileExtension);
     }
 }
