@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="576eeb5e-649f-498f-b59e-3b92219af755" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../blog/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../relationship/src/main/java/vn/techmaster/relation/repository/manymany/SubjectRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../webtruyen_project/src/main/java/vn/techmaster/webtruyen_project/exception/NotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../webtruyen_project/src/main/java/vn/techmaster/webtruyen_project/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../webtruyen_project/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobHunt/src/main/java/vn/techmaster/JobHunt/JobHuntApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobHunt/src/main/java/vn/techmaster/JobHunt/controller/EmployerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobHunt/src/main/java/vn/techmaster/JobHunt/controller/HomeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobHunt/src/main/java/vn/techmaster/JobHunt/controller/JobController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobHunt/src/main/java/vn/techmaster/JobHunt/exception/StorageException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobHunt/src/main/java/vn/techmaster/JobHunt/model/City.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobHunt/src/main/java/vn/techmaster/JobHunt/model/Employer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobHunt/src/main/java/vn/techmaster/JobHunt/model/Job.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobHunt/src/main/java/vn/techmaster/JobHunt/request/EmployerRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobHunt/src/main/java/vn/techmaster/JobHunt/request/JobRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobHunt/src/main/java/vn/techmaster/JobHunt/respository/EmployerRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobHunt/src/main/java/vn/techmaster/JobHunt/respository/JobRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobHunt/src/main/java/vn/techmaster/JobHunt/service/StorageService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobHuntV2/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JobHuntV2/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobHuntV2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JobHuntV2/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/post/_31.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/post/_31.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/post/_31.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/post/_37.fdm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/post/_37.fdt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/post/_37.fdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/post/_37.fnm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/post/_37.nvd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/post/_37.nvm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/post/_37.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/post/_37_Lucene80_0.dvd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/post/_37_Lucene80_0.dvm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/post/_37_Lucene84_0.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/post/_37_Lucene84_0.pos" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/post/_37_Lucene84_0.tim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/post/_37_Lucene84_0.tip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/post/_37_Lucene84_0.tmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/post/segments_10" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/target/generated-sources/annotations/vn/techmaster/blog/DTO/PostMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/target/generated-sources/annotations/vn/techmaster/blog/DTO/PostMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog/target/generated-sources/annotations/vn/techmaster/blog/DTO/UserMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/target/generated-sources/annotations/vn/techmaster/blog/DTO/UserMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demojpa/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../demojpa/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shoppingcart/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../shoppingcart/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shoppingcart/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../shoppingcart/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shoppingcart/src/main/java/vn/techmaster/shopingcart/model/Cart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shoppingcart/src/main/java/vn/techmaster/shopingcart/model/OrderLine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shoppingcart/src/main/java/vn/techmaster/shopingcart/model/Product.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2A47wf9BvTBOMnVI41rvTn0pmh7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Techmaster/Spring_Boot/bookstore"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="KiemTraJpaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="KiemTraJPA" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.kiemtrajpa.KiemTraJpaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="576eeb5e-649f-498f-b59e-3b92219af755" name="Changes" comment="" />
+      <created>1654257245797</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1654257245797</updated>
+      <workItem from="1654257247160" duration="183000" />
+      <workItem from="1654258388393" duration="38000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

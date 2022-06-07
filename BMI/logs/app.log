@@ -1,0 +1,14 @@
+[INFO ] 2021-12-04 11:45:44.403 [main] BmiserviceApplication - Starting BmiserviceApplication using Java 17.0.1 on Cuong.local with PID 4813 (/Volumes/CODE/springboot2/12 Exception Handling/bmiservice/target/classes started by techmaster in /Volumes/CODE/springboot2/12 Exception Handling/bmiservice)
+[DEBUG] 2021-12-04 11:45:44.423 [main] BmiserviceApplication - Running with Spring Boot v2.6.1, Spring v5.3.13
+[INFO ] 2021-12-04 11:45:44.425 [main] BmiserviceApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2021-12-04 11:45:45.925 [main] BmiserviceApplication - Started BmiserviceApplication in 1.901 seconds (JVM running for 2.884)
+[ERROR] 2021-12-04 11:46:15.303 [http-nio-8080-exec-1] BMIController - Invalid height = 1.75, weight = a00
+[INFO ] 2021-12-04 11:48:31.356 [main] BmiserviceApplication - Starting BmiserviceApplication using Java 17.0.1 on Cuong.local with PID 4924 (/Volumes/CODE/springboot2/12 Exception Handling/bmiservice/target/classes started by techmaster in /Volumes/CODE/springboot2/12 Exception Handling/bmiservice)
+[DEBUG] 2021-12-04 11:48:31.366 [main] BmiserviceApplication - Running with Spring Boot v2.6.1, Spring v5.3.13
+[INFO ] 2021-12-04 11:48:31.373 [main] BmiserviceApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2021-12-04 11:48:32.591 [main] BmiserviceApplication - Started BmiserviceApplication in 1.541 seconds (JVM running for 2.453)
+[ERROR] 2021-12-04 11:49:06.415 [http-nio-8080-exec-3] CustomExceptionHandler - 404 NOT_FOUND "Actor Not Found"
+[INFO ] 2022-05-30 19:58:48.203 [main] BmiserviceApplication - Starting BmiserviceApplication using Java 17.0.3 on DESKTOP-UK4D7GR with PID 5520 (D:\Techmaster\Spring_Boot\BMI\target\classes started by Hoang Dat in D:\Techmaster\Spring_Boot\BMI)
+[DEBUG] 2022-05-30 19:58:48.222 [main] BmiserviceApplication - Running with Spring Boot v2.6.1, Spring v5.3.13
+[INFO ] 2022-05-30 19:58:48.223 [main] BmiserviceApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2022-05-30 19:58:49.568 [main] BmiserviceApplication - Started BmiserviceApplication in 1.805 seconds (JVM running for 5.027)
