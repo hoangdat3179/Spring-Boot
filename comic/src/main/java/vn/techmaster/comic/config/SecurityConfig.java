@@ -2,6 +2,7 @@ package vn.techmaster.comic.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.User;
@@ -22,6 +23,16 @@ import java.util.Map;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.httpBasic();
+        http.authorizeRequests()
+                .antMatchers("/api/products").hasAnyRole(Role.USER, Role.OPERATOR, Role.ADMIN)
+                .antMatchers("/api/backoffice").hasAnyRole(Role.OPERATOR, Role.ADMIN)
+                .antMatchers("/api/secret").hasRole(Role.ADMIN)
+                .antMatchers("/**").permitAll();
+    }
     public static PasswordEncoder delegatePasswordEncoder(String encodingType) {
         Map<String, PasswordEncoder> encoders = new HashMap<>();
         encoders.put("bcrypt", new BCryptPasswordEncoder());
