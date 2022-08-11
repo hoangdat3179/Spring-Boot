@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="Templates :: head"></head>
+<body>
+<nav th:replace="Templates :: menu"></nav>
+<div class="container">
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a th:href="@{/}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page" th:text="${story.title}">Library</li>
+        </ol>
+    </nav>
+    <hr class="ui-menu-divider">
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <img th:src="@{${story.imagePath}}" style="width: 300px" class="rounded">
+        </div>
+        <div class="col">
+            <p th:text="${story.title}" class="fs-3 text-uppercase fw-bolder"></p>
+            <p>Tác Giả:</p>
+            <p th:text="${story.author}" class="fs-5"></p>
+            <p>Thể loại:</p>
+            <p th:text="${story.categories}" class="fs-5"></p>
+            <p>Nguồn:</p>
+            <p th:text="${story.link}" class="fs-5"></p>
+            <p>Mô tả:</p>
+            <p th:text="${story.description}"></p>
+
+        </div>
+        <div class="col border border-dark rounded">
+            <p class="fs-5 text-uppercase fw-bolder" >Thể Loại Truyện</p>
+            <hr class="ui-menu-divider">
+            <th:block th:with="partitions = ${T(org.apache.commons.collections4.ListUtils).partition(listCategories,2)}">
+                <div class="row" th:each="partition : ${partitions}">
+                    <div class="col-sm-6 p-2 list-group" th:each="category : ${partition}">
+                    <a class="list-group-item list-group-item-action" th:href="|/stories/category/${category.id}|" style="text-decoration: none; color: black;" th:text="${category.name}"></a>
+                    </div>
+                </div>
+            </th:block>
+        </div>
+    </div>
+    <hr class="ui-menu-divider">
+</div>
+<div class="container">
+    <p class="fs-4 text-uppercase fw-bolder">Danh sách chương</p>
+    <div class="row">
+        <hr class="ui-menu-divider">
+        <div class="col" >
+            <ul th:each="chapter : ${listChapters}">
+                <li>
+                    <a th:href="|/stories/${story.id}/chapter/${chapter.id}|" th:text="${chapter.title}" style="text-decoration: none"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div th:replace="Templates :: footer"></div>
+</body>
+</html>

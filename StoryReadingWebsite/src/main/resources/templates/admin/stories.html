@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="fragmentsAdmin :: html_head"></head>
+
+<body>
+<nav th:replace="fragmentsAdmin :: html_menu"></nav>
+    <div class="container mt-3">
+        <a th:href="@{/admin/stories/new}" style="margin: 20px 0" class="btn btn-primary">Thêm truyện</a>
+        <div><h1>Danh sách truyện</h1></div><br>
+        <div>
+            <form th:action="@{/admin/search}">
+                Tìm kiếm:
+                <input type="text" name="keyword" th:value="${keyword}" required>
+                &nbsp;
+                <input type="submit" value="Search">
+                &nbsp;
+                <input type="button" value="Clear" onclick="clearFilter()">
+            </form>
+        </div><br>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Tên</th>
+                    <th scope="col">Ảnh</th>
+                    <th scope="col">Tác giả</th>
+                    <th scope="col">Nguồn truyện</th>
+                    <th scope="col">Nội dung</th>
+                    <th scope="col">Thể loại</th>
+                    <th scope="col">Trạng thái</th>
+                    <th scope="col">Xóa</th>
+                    <th scope="col">Sửa</th>
+                    <th scope="col">Danh sách Chương</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="story : ${listStories}">
+                    <th th:text="${story.id}"></th>
+                    <td th:text="${story.title}"></td>
+                    <td>
+                        <img th:src="@{${story.imagePath}}" style="width: 100px">
+                    </td>
+                    <td th:text="${story.author}"></td>
+                    <td th:text="${story.link}"></td>
+                    <td th:text="${story.description}"></td>
+                    <td th:text="${story.categories}"></td>
+                    <td>
+                        <th:block
+                                th:each="status : ${T(vn.techmaster.storyreadingwebsite.entity.Status).values()}">
+                                            <span class="badge"
+                                                  th:class="${#strings.equals(story.status,'HOANTHANH')} ? 'badge bg-success':'badge bg-danger'"
+                                                  th:if="${status == story.status}" th:text="${status.label}">
+                                            </span>
+                        </th:block>
+                    </td>
+
+                    <td><a th:href="@{'/admin/stories/delete/' + ${story.id}}" class="btn btn-danger">Xóa</a></td>
+                    <td><a th:href="@{'/admin/stories/edit/' + ${story.id}}" class="btn btn-warning">Sửa</a></td></td>
+                    <td><a th:href="|/admin/stories/${story.id}|" class="btn btn-outline-info">Xem</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<div class="text-center">
+    Total Story: [[${totalItems}]] - Page [[${currentPage}]] of [[${totalPages}]]
+    &nbsp; - &nbsp;
+
+    <a th:if="${currentPage > 1}" th:href="@{/admin/stories/page/1}">First</a>
+    <span th:unless="${currentPage > 1}">First</span>
+    &nbsp;
+    <a th:if="${currentPage > 1}" th:href="@{'/admin/stories/page/' + ${currentPage - 1}}">Previous</a>
+    <span th:unless="${currentPage > 1}">Previous</span>
+    &nbsp;
+    <span th:each="i : ${#numbers.sequence(1,totalPages)}">
+        <a th:if="${i != currentPage}" th:href="@{'/admin/stories/page/' + ${i}}">[[${i}]]</a>
+        <span th:unless="${i != currentPage}" >[[${i}]]</span>
+        &nbsp;&nbsp;
+    </span>
+
+    <a th:if="${currentPage < totalPages}" th:href="@{'/admin/stories/page/' + ${currentPage + 1}}">Next</a>
+    <span th:unless="${currentPage < totalPages}">Next</span>
+    &nbsp;
+
+    <a th:if="${currentPage < totalPages}" th:href="@{'/admin/stories/page/' + ${totalPages}}">Last</a>
+    <span th:unless="${currentPage < totalPages}">Last</span>
+</div>
+<script type="text/javascript">
+    function clearFilter(){
+        window.location = '/admin/stories';
+    }
+</script>
+<footer th:replace="fragmentsAdmin :: html_footer"></footer>
+</body>
+
+</html>

@@ -1,0 +1,358 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chapter 2</title>
+        <link rel="stylesheet" href="../style/footer.css">
+        <link rel="stylesheet" href="../style/truyen.css">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    </head>
+<body>
+  <!-- This is NavigationBar -->
+  <div class="topMainPage">
+    <div class="overlay "></div>
+</div>
+
+<div class="topNav bg-light" style="z-index: 3;position: relative;">
+    <nav class="container navbar navbar-expand-lg bg-light navbar-light">
+        <a class="navbar-brand" href="#">Logo truyện</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Năm Phát Hành
+                    </a>
+                    <div class="dropdown-menu mega-dropdown-release" aria-labelledby="navbarDropdown">
+                        <div class="d-flex flex-column dropdown-distance">
+                            <a>Truyện 2010</a>
+                            <a>Truyện 2011</a>
+                            <a>Truyện 2012</a>
+                            <a>Truyện 2013</a>
+                            <a>Truyện 2014</a>
+                            <a>Truyện 2015</a>
+                            <a>Truyện 2016</a>
+                            <a>Truyện 2017</a>
+                            <a>Truyện 2018</a>
+                            <a>Truyện 2019</a>
+                            <a>Truyện 2020</a>
+                            <a>Truyện 2021</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Thể loại
+                    </a>
+                    <div class="dropdown-menu mega-dropdown-category" aria-labelledby="navbarDropdown">
+                        <div class="row">
+                            <div class="col-md-4 d-flex flex-column dropdown-distance">
+                                <a>Tiên Hiệp</a>
+                                <a>Kiếm Hiệp</a>
+                                <a>Ngôn Tình</a>
+                                <a>Đô Thị</a>
+                                <a>Quan Trường</a>
+                                <a>Võng Du</a>
+                                <a>Khoa Huyễn</a>
+                                <a>Hệ Thống</a>
+                                <a>Huyền Huyễn</a>
+                                <a>Dị Giới</a>
+                                <a>Dị Năng</a>
+                                <a>Quân Sự</a>
+                                <a>Lịch Sử</a>
+                            </div>
+                            <div class="col-md-4 d-flex flex-column dropdown-distance">
+                                <a>Xuyên Không</a>
+                                <a>Xuyên Nhanh</a>
+                                <a>Trọng Sinh</a>
+                                <a>Trinh Thám</a>
+                                <a>Thám Hiểm</a>
+                                <a>Linh Dị</a>
+                                <a>Sắc</a>
+                                <a>Ngược</a>
+                                <a>Sủng</a>
+                                <a>Cung Đấu</a>
+                                <a>Nữ Cường</a>
+                                <a>Gia Đấu</a>
+                                <a>Đông Phương</a>
+                            </div>
+                            <div class="col-md-4 d-flex flex-column dropdown-distance">
+                                <a>Đam Mỹ</a>
+                                <a>Bách Hợp</a>
+                                <a>Hài Ước</a>
+                                <a>Điền Văn</a>
+                                <a>Cổ Đại</a>
+                                <a>Mạt Thế</a>
+                                <a>Truyện Teen</a>
+                                <a>Phương Tây</a>
+                                <a>Nữ Phụ</a>
+                                <a>Light Novel</a>
+                                <a>Việt Nam</a>
+                                <a>Đoản Văn</a>
+                                <a>Khác</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Trạng thái
+                    </a>
+                    <div class="dropdown-menu mega-dropdown-status" aria-labelledby="navbarDropdown">
+                        <div class="d-flex flex-column dropdown-distance">
+                            <a>Đã Hoàn Thành</a>
+                            <a>Đang Tiến Hành</a>
+                            <a>Bị Bỏ Dở</a>
+                        </div>
+                    </div>
+                </li>
+                
+                <div class="form-inline my-2 my-lg-0 custome-navbar-search">
+                    <input class="form-control mr-sm-2 w-100 border-search" type="search" placeholder="Search"
+                        aria-label="Search">
+                    <svg width="16" height="16" fill="currentColor" class="bi bi-search search-icon"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                </div>
+                <li class="nav-item dropdown ">
+                    <div class="nav-link dropdown-toggle btnLogin " id="navbarDropdown" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Xem trang cá nhân</div>
+                    <div class="dropdown-menu mega-dropdown-userfeature" aria-labelledby="navbarDropdown">
+                        <div class="d-flex flex-column dropdown-distance">
+                            <a>Thông tin chung</a>
+                            <a>Đăng xuất</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<!-- This is End of NavigationBar -->
+
+<!-- This is Content --> 
+    <div class="nav justify-content-center">
+        <h2>Chương 2</h2>
+    </div>
+    <br><br>
+    <div class="nav justify-content-center">
+        <div>
+        <div class="btn-group">
+            <a href="Chapter_1.html" title="Chương 1">
+                <button type="button" class="btn btn-primary">
+                    <svg width="20" height="24" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                        <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                    </svg> 
+                </button>
+            </a>
+        </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle " data-toggle="dropdown">
+                    <svg width="16" height="16" fill="currentColor" class="bi bi-border-width" viewBox="0 0 16 16">
+                        <path d="M0 3.5A.5.5 0 0 1 .5 3h15a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-2zm0 5A.5.5 0 0 1 .5 8h15a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1zm0 4a.5.5 0 0 1 .5-.5h15a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z"/>
+                    </svg>
+                Chapter
+                </button>
+                <div class="dropdown-menu">
+                <a class="dropdown-item" href="Chapter_1.html">Chapter 1</a>
+                <a class="dropdown-item" href="Chapter_2.html">Chapter 2</a>
+                <a class="dropdown-item" href="Chapter_2.html">Chapter 3</a>
+                <a class="dropdown-item" href="Chapter_2.html">Chapter 4</a>
+                <a class="dropdown-item" href="Chapter_2.html">Chapter 5</a>
+                <a class="dropdown-item" href="Chapter_2.html">Chapter 6</a>
+                <a class="dropdown-item" href="Chapter_2.html">Chapter 7</a>
+                <a class="dropdown-item" href="Chapter_2.html">Chapter 8</a>
+                <a class="dropdown-item" href="Chapter_2.html">Chapter 9</a>
+                <a class="dropdown-item" href="Chapter_2.html">Chapter 10</a>
+                </div>
+            </div>
+            <div class="btn-group">
+                <a href="Chapter_2.html" title="Chương 3">
+                    <button type="button" class="btn btn-primary glyphicon glyphicon-chevron-right">
+                        <svg width="20" height="24" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                            <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                        </svg>
+                    </button>
+                </a>
+            </div>
+        </div>           
+    </div>
+    <!--Noi Dung-->
+    <br>
+    <div id="chapter-info">
+        <div class="container">
+            <br>
+            <div class="chapter-text">
+                <p>Nửa đêm, Lương Hạnh dường như đã chìm vào trong giấc mơ, nhưng sau đó...</p>
+                <p>Cô mở đôi mắt nặng trĩu, nhất thời sững lại.</p>
+                <p>Thì ra ngay lúc này, người đàn ông cả tuần mới về một lần kia đang đứng bên cạnh cô, ánh đèn vàng ấm áp nơi đầu giường rọi lên người anh, soi tỏ làn da nửa thân trên cùng cánh tay thon dài, nhìn qua thật là đẹp.</p>
+                <p>Lương Hạnh sững sờ.</p>
+                <p>Hôm nay mới là thứ bảy mà nhỉ, sao anh ta đã về rồi?</p>
+                <p>Sáng hôm sau, Lương Hạnh bị tiếng còi xe dưới nhà làm cho tỉnh giấc.</p>
+                <p>Cô ôm chăn ngồi dậy, ngây người mất hồi lâu, đến khi nghe thấy tiếng động từ dưới bếp, cô mới vội vội vàng vàng lao ra khỏi phòng, rồi nhìn thấy một bóng lưng cao gầy đang lúi húi trong bếp.</p>
+                <p>Người đàn ông ấy mặc bộ đồ ở nhà, eo săn chắc, cặp chân dài, nhìn tổng thể dáng người hơi gầy.</p>
+                <p>Triệu Mịch Thanh làm xong bữa sáng, vừa bước ra khỏi nhà bếp thì thấy Lương Hạnh mặc đồ ngủ đứng đó từ bao giờ, anh khẽ cau mày: “Đi thay đồ đi.”</p>
+                <p>“À, ừm.” Lương Hạnh cúi đầu nhìn bộ váy ngủ lụa tơ tằm trên người, lập tức xấu hổ đỏ mặt, vội vã chạy về phòng.</p>
+                <p>Cô đánh răng rửa mặt xong xuôi thì Triệu Mịch Thanh đã đang ngồi bàn ăn sáng trước rồi. Lương Hạnh bèn ngồi xuống đối diện anh.</p>
+            </div>        
+        </div>
+    </div> <br><br>
+    <div class="nav justify-content-center">
+        <div>
+        <div class="btn-group">
+            <a href="Chapter_1.html" title="Chương 1">
+                <button type="button" class="btn btn-primary">
+                    <svg width="20" height="24" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                        <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                    </svg> 
+                </button>
+            </a>
+        </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle " data-toggle="dropdown">
+                    <svg width="16" height="16" fill="currentColor" class="bi bi-border-width" viewBox="0 0 16 16">
+                        <path d="M0 3.5A.5.5 0 0 1 .5 3h15a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-2zm0 5A.5.5 0 0 1 .5 8h15a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1zm0 4a.5.5 0 0 1 .5-.5h15a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z"/>
+                    </svg>
+                Chapter
+                </button>
+                <div class="dropdown-menu">
+                <a class="dropdown-item" href="Chapter_1.html">Chapter 1</a>
+                <a class="dropdown-item" href="Chapter_2.html">Chapter 2</a>
+                <a class="dropdown-item" href="Chapter_2.html">Chapter 3</a>
+                <a class="dropdown-item" href="Chapter_2.html">Chapter 4</a>
+                <a class="dropdown-item" href="Chapter_2.html">Chapter 5</a>
+                <a class="dropdown-item" href="Chapter_2.html">Chapter 6</a>
+                <a class="dropdown-item" href="Chapter_2.html">Chapter 7</a>
+                <a class="dropdown-item" href="Chapter_2.html">Chapter 8</a>
+                <a class="dropdown-item" href="Chapter_2.html">Chapter 9</a>
+                <a class="dropdown-item" href="Chapter_2.html">Chapter 10</a>
+                </div>
+            </div>
+            <div class="btn-group">
+                <a href="Chapter_2.html" title="Chương 3">
+                    <button type="button" class="btn btn-primary glyphicon glyphicon-chevron-right">
+                        <svg width="20" height="24" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                            <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                        </svg>
+                    </button>
+                </a>
+            </div>
+        </div>           
+    </div>
+
+    <!--Comment-->
+    <br><br><hr>
+    <div class="Container">
+      <div class ="col-12 ">
+        <h3>Bình Luận</h3>
+        <div class="media border p-3">
+            <img src="../imageMainPage/cat.jpg" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+            <div class="media-body">
+                <textarea rows="3" class="w-100" placeholder="Thêm bình luận"></textarea>
+                <div class="media p-3">
+                <img src="../imageMainPage/cat.jpg" alt="Jane Doe" class="mr-3 mt-3 rounded-circle" style="width:45px;">
+                    <div class="media-body">
+                    <h4>Jane Doe <small><i>Posted on September 2 2021</i></small></h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+              <div class="media p-3">
+                <img src="../imageMainPage/Facebook-Avatar_3.png" alt="Jane Doe" class="mr-3 mt-3 rounded-circle" style="width:45px;">
+                <div class="media-body">
+                  <h4>Jack cheap<small><i>Posted on September 9 2021</i></small></h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+
+<!-- This is footer -->
+<section class="footers bg-light pt-5 pb-3">
+  <div class="container pt-5">
+      <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-3 footers-one">
+           <div class="footers-logo">
+               <img src="../imageMainPage/icon.png" alt="Logo" style="width:100px;">
+           </div>
+           <div class="footers-info mt-3">
+               <p>Website cập nhật truyện sớm nhất Trường Đại học Bà Rịa - Vũng Tàu</p>
+           </div>
+           <div class="social-icons"> 
+               <a href="https://www.facebook.com/"><i id="social-fb" class="fa fa-facebook-square fa-2x social"></i></a>
+               <a href="https://twitter.com/"><i id="social-tw" class="fa fa-twitter-square fa-2x social"></i></a>
+             <a href="https://plus.google.com/"><i id="social-gp" class="fa fa-google-plus-square fa-2x social"></i></a>
+             <a href="mailto:bootsnipp@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-2x social"></i></a>
+         </div>
+       </div>
+        <div class="col-xs-12 col-sm-6 col-md-3 footers-two">
+           <h5>Nhóm dịch truyện </h5>
+           <ul class="list-unstyled">
+          <li><a href="maintenance.html">Search</a></li>
+          <li><a href="contact.html">Sell your Car</a></li>
+          <li><a href="about.html">Advertise with us</a></li>
+
+         </ul>
+       </div>
+        <div class="col-xs-12 col-sm-6 col-md-3 footers-three">
+           <h5>Thông tin liên hệ </h5>
+           <ul class="list-unstyled">
+          <li><a href="maintenance.html">fb:facebook.com</a></li>
+          <li><a href="contact.html"> gmail: gmail@gmail.com</a></li>
+          <li><a href="about.html">Số điện thoại: 012345654</a></li>
+
+         </ul>
+       </div>
+        <div class="col-xs-12 col-sm-6 col-md-3 footers-four">
+           <h5>Liên kết </h5>
+           <ul class="list-unstyled">
+          <li><a href="maintenance.html">sinhvien.bvu.edu.vn</a></li>
+          <li><a href="contact.html">baothanhnien</a></li>
+          <li><a href="about.html">baodoibaohai</a></li>
+
+         </ul>
+       </div>
+
+       
+      </div>
+  </div>
+</section>
+<section class="disclaimer bg-light border">
+   <div class="container">
+       <div class="row ">
+           <div class="col-md-12 py-2">
+               <small>
+                Cái này là cái description của footer
+              </small>
+           </div>
+       </div>
+   </div>
+</section>
+<section class="copyright border">
+   <div class="container">
+       <div class="row text-center">
+           <div class="col-md-12 pt-3">
+               <p class="text-muted">© 2018 xyz Software Pvt. Ltd.</p>
+           </div>
+       </div>
+   </div>
+</section>
+</body>
+</html>

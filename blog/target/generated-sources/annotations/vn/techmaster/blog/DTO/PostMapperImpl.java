@@ -10,7 +10,7 @@ import vn.techmaster.blog.model.User;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-05-28T22:46:01+0700",
+    date = "2022-06-27T00:31:02+0700",
     comments = "version: 1.4.1.Final, compiler: javac, environment: Java 17.0.3 (Oracle Corporation)"
 )
 public class PostMapperImpl implements PostMapper {

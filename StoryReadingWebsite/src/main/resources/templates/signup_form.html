@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/login.css}" />
+</head>
+<body>
+<div class="login-page">
+    <div class="form">
+        <form class="login-form" th:action="@{/process_register}" method="post" th:object="${user}">
+            <input type="text" placeholder="username" th:field="*{username}"/>
+            <input type="password" placeholder="password" th:field="*{password}"/>
+            <input type="text" placeholder="email address" th:field="*{email}"/>
+            <button type="submit">create</button>
+            <p class="message">Already registered? <a th:href="@{/user/login}">Sign In</a></p>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
