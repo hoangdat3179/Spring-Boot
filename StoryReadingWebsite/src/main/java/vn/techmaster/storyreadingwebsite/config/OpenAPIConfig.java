@@ -11,6 +11,8 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class OpenAPIConfig {
+
+	// Cấu hình swaggerUI
   @Bean
 	public OpenAPI customOpenAPI(
 			@Value("${application-description}") String appDesciption,

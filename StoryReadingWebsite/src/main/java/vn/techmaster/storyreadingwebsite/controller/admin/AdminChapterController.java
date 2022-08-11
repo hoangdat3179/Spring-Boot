@@ -25,7 +25,7 @@ public class AdminChapterController{
     private ChapterRepository chapterRepo;
 
 
-    //Lấy truyện theo id
+    //Lấy chương theo id
     @GetMapping(value = "/stories/{id}")
     public String showBookDetailByID(Model model,@PathVariable("id") Long id) {
         Story story = storyRepo.findById(id).get();

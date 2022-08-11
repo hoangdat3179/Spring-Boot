@@ -27,11 +27,11 @@
                 <input type="text" th:field="*{link}" class="form-control" required>
             </div><br>
                 <div>
-                    <label for="description" class="form-label">Nội dung truyện</label>
+                    <label for="description" class="form-label">Nội dung truyện: </label>
                     <textarea class="form-control" th:field="*{description}" id="description" rows="10" cols="70"></textarea>
                 </div><br>
                 <div>
-                <label class="form-label">Trạng thái</label>
+                <label class="form-label">Trạng thái: </label>
                 <select class="form-control" id="status" th:field="*{status}">
                     <option
                             th:each=" status : ${T(vn.techmaster.storyreadingwebsite.entity.Status).values()}"
@@ -42,7 +42,7 @@
                 <div>
                     <label class="form-label">Thể loại: </label>
                        <th:block th:each="category : ${listCategories}">
-                        <div class="form-check d-inline-flex">
+                        <div class="form-check">
                             <input type="checkbox" th:field="*{categories}" th:text="${category.name}"
                             th:value="${category.id}" class="form-check-input me-2"/>
                         </div>

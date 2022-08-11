@@ -9,6 +9,8 @@ import java.nio.file.Paths;
 
 @Configuration
 public class MvcConfig implements WebMvcConfigurer {
+
+    // Tạo thư mục upload ảnh
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         exposeDirectory("book-images", registry);

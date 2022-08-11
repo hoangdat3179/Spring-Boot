@@ -6,6 +6,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import vn.techmaster.storyreadingwebsite.entity.Status;
 import vn.techmaster.storyreadingwebsite.entity.Story;
 import vn.techmaster.storyreadingwebsite.repository.StoryRepository;
 import vn.techmaster.storyreadingwebsite.repository.UserRepository;
@@ -36,6 +37,7 @@ public class StoryService {
         return storyRepository.findAll(pageable);
     }
 
+    // Tìm truyện theo ID
     public Optional<Story> findById(Long id){
         return storyRepository.findById(id);
     }
@@ -44,6 +46,12 @@ public class StoryService {
   /*  Tìm kiếm theo tên*/
     public List<Story> findByTitleContainsIgnoreCase(String title) {
         List<Story> stories = storyRepository.findByTitleContainsIgnoreCase(title);
+        return stories;
+    }
+
+    // Tìm truyện theo trạng thái
+    public List<Story> findByStatus(){
+        List<Story> stories = storyRepository.findByStatus(Status.HOANTHANH);
         return stories;
     }
     

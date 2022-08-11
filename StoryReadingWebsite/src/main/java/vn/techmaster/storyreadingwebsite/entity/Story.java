@@ -62,7 +62,7 @@ public class Story implements Serializable {
             cascade = CascadeType.ALL,
             orphanRemoval = true,fetch = FetchType.LAZY
     )
-    @JoinColumn(name = "story_id")
+    @JoinColumn(name = "story_id", referencedColumnName = "id")
     private List<Comment> comments = new ArrayList<>();
 
     public void addComment(Comment comment) {

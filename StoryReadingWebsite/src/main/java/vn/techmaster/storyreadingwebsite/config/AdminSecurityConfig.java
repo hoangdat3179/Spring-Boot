@@ -11,8 +11,10 @@ import org.springframework.security.web.SecurityFilterChain;
 import vn.techmaster.storyreadingwebsite.Service.CustomUserDetailsService;
 
 @Configuration
-@Order(1)
+
 public class AdminSecurityConfig {
+
+    // Cấu hình security trang Admin
 
     @Bean
     public UserDetailsService userDetailsService() {

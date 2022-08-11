@@ -12,10 +12,7 @@ import java.util.UUID;
 
 @Repository
 public interface CategoryRepository extends JpaRepository<Category, Long> {
+    // Tìm thể loại theo tên
     Page< Category > findAllByNameContaining(String search, Pageable pageable);
-
-    @Query("select c from category c where c.name = ?1")
-    Optional<Category> findByName(String name);
-
 
 }

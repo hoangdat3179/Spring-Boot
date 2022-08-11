@@ -1,5 +1,6 @@
 package vn.techmaster.storyreadingwebsite.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,8 +9,8 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-@Entity(name = "comment")
-@Table(name = "comment")
+@Entity(name = "comments")
+@Table(name = "comments")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,7 +20,10 @@ public class Comment implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length=1000)
+    @Column(nullable = false)
+    private String name;
+
+    @Column(nullable = false,columnDefinition = "TEXT")
     private String content;
     private LocalDateTime lastUpdate;
 
@@ -37,14 +41,7 @@ public class Comment implements Serializable {
     }
 
     @ManyToOne(fetch = FetchType.EAGER)
-    private User user; //Mỗi comment phải do một commenter viết
-
-    public void setUser(User user) {
-        user.getComments().add(this);
-        this.user = user;
-    }
-
-    @ManyToOne(fetch = FetchType.EAGER)
+    @JsonIgnore
     private Story story; //Mỗi comment phải gắn vào một story
 
 }

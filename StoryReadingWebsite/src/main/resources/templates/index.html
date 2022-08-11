@@ -48,6 +48,24 @@
       </div>
     </div>
   </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8" style="font-size: 30px; font-weight: 300">Truyện đã hoàn thành
+      <hr class="ui-menu-divider">
+      <div class="container">
+        <div class="row">
+    <div class="col-12 col-sm-3 col-md-3 border border-2 m-2 rounded" th:each="story : ${storyFull}" >
+      <a th:href="|/stories/${story.id}|" style="text-decoration: none"> <div class="p-2 bd-highlight">
+        <img th:src="@{${story.imagePath}}" class="rounded" style="width: 170px">
+        <p class="fs-5" th:text="${story.title}" style="width: 170px;"></p>
+      </div>
+      </a>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
 <div th:replace="Templates :: footer"></div>
   </body>
 </html>

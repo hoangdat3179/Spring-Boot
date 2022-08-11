@@ -55,8 +55,41 @@
             </ul>
         </div>
     </div>
+    <hr class="ui-menu-divider">
 </div>
-
+<div class="container">
+    <h3>Comment</h3>
+    <div class="container">
+        <form th:action="|/stories/${story.id}|" th:object="${comment}" method="post">
+            <input type="hidden" th:field="*{id}"/>
+            <div>
+                <label class="form-label">Name: </label>
+                <input type="text" th:field="*{name}" class="form-control" required>
+            </div>
+            <div>
+                <label for="description" class="form-label">Comment</label>
+                <textarea class="form-control" th:field="*{content}" id="description" rows="3" cols="70"></textarea>
+            </div><br>
+            <div class="d-flex flex-row-reverse">
+                <input type="submit" value="Add comment">
+            </div>
+        </form>
+    </div>
+    <hr class="ui-menu-divider">
+</div>
+<div class="container">
+    <div class="border border-3 rounded m-3 d-flex" th:each="comment: ${commentList}">
+        <div class="m-3">
+            <img src="/assets/images/avatar.jpg" class="rounded-circle" alt="avatar" style="width: 50px">
+        </div>
+        <div class="m-3">
+            <span class="fw-bold" th:text="${comment.name}"></span>
+            <p th:text="${comment.content}"></p>
+        </div>
+            <td><a th:href="@{'/stories/'+ ${story.id} + '/comment/delete/' + ${comment.id}}"
+                   class="btn btn-danger">Xóa</a></td>
+    </div>
+</div>
 <div th:replace="Templates :: footer"></div>
 </body>
 </html>

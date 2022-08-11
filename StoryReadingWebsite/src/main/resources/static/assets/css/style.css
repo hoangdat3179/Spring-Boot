@@ -128,3 +128,12 @@ table {
   border-spacing: 0;
 }
 
+.footer {
+  width: 100%;
+  margin-top: 10px;
+  background-color: #f8f8f8;
+  border-top: 1px solid #e7e7e7;
+  color: #4E4E4E;
+  font-size: 13px;
+}
+

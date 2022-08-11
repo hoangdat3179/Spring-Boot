@@ -60,16 +60,6 @@
                 <input class="form-control me-2" type="text" placeholder="Search" name="keyword" th:value="${keyword}">
                 <button class="btn btn-primary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
-            <div class="nav-user-wrapper" id="dangnhap">
-                <a th:href="@{/user/login}"><button  class="nav-user-btn dropdown-btn" style="color: red;" title="Đăng nhập" type="button">
-                    Đăng nhập
-                </button></a>
-            </div>
-            <div class="nav-user-wrapper" id="dangky">
-                <a th:href="@{/register}"><button  class="nav-user-btn dropdown-btn" style="color: red;"title="Đăng ký" type="button">
-                    Đăng ký
-                </button></a>
-            </div>
         </div>
     </div>
 </nav><br>
@@ -113,7 +103,42 @@
     </div>
 </nav><br>
 
+<!--<div th:fragment="footer">-->
+<!--    <div id="footer">-->
+<!--<div class="container">-->
+<!--    <div class="row">-->
+<!--            <p>Truyện Full - Đọc truyện online, đọc truyện chữ, truyện hay. Website luôn cập nhật những bộ truyện mới thuộc các thể loại đặc sắc như truyện tiên hiệp, truyện kiếm hiệp, hay truyện ngôn tình một cách nhanh nhất. Hỗ trợ mọi thiết bị như di động và máy tính bảng.</p>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 <div th:fragment="footer">
+    <footer class="bg-light text-center">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+            <!-- Section: Form -->
+            <section class="">
+                <form action="">
+                    <!--Grid row-->
+                    <div class="row d-flex justify-content-center">
+                        Truyện Full - Đọc truyện online, đọc truyện chữ, truyện hay. Website luôn cập nhật những bộ truyện mới thuộc các thể loại đặc sắc như truyện tiên hiệp, truyện kiếm hiệp, hay truyện ngôn tình một cách nhanh nhất. Hỗ trợ mọi thiết bị như di động và máy tính bảng.
+                    </div>
+                    <!--Grid row-->
+                </form>
+            </section>
+            <!-- Section: Form -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2022 Copyright:
+            <a class="text-dark">Email: hoangdat3179@gmail.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+</div>
+
+
 <!-- JQUERY-3.6.0 -->
 <script th:src="@{/plugins/jquery-3.6.0.min.js}"></script>
 <!-- Bootstrap -->
