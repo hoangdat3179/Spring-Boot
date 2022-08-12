@@ -93,11 +93,9 @@ public class MainController {
 
     // Tìm truyện theo thể loại
     @RequestMapping("/stories/category/{cId}")
-    public String findBookByCategory(Model model,@PathVariable("cId") Story cId){
+    public String findBookByCategory(Model model,@PathVariable("cId") Long cId){
         List<Category> listCategories = categoryRepo.findAll();
-        Optional<Category> category = categoryRepo.findById(cId.getId());
-        List<Story> listStories = storyRepo.findAllByCategoryId(cId.getId());
-        model.addAttribute("category", category);
+        List<Story> listStories = storyRepo.findByCategoriesId(cId);
         model.addAttribute("listStories", listStories);
         model.addAttribute("listCategories",listCategories);
         return "bookCategory";

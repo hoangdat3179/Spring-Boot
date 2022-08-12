@@ -54,6 +54,10 @@ public class StoryService {
         List<Story> stories = storyRepository.findByStatus(Status.HOANTHANH);
         return stories;
     }
+
+    public List<Story> findByCategory(Long id){
+        return storyRepository.findByCategoriesId(id);
+    }
     
 
 }

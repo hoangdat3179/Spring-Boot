@@ -18,16 +18,15 @@ public class DatabaseLoader {
         this.repo = repo;
     }
 
-    @Bean
-    public CommandLineRunner initializeDatabase() {
-        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        return args -> {
-            User user1 = new User("admin@gmail.com", encoder.encode("admin"), Role.ADMIN);
-
-            repo.saveAll(List.of(user1));
-
-            System.out.println("Database initialized");
-        };
-    }
+//    @Bean
+//    public CommandLineRunner initializeDatabase() {
+//        return args -> {
+//            User user1 = new User("admin@gmail.com","admin", Role.ADMIN);
+//
+//            repo.saveAll(List.of(user1));
+//
+//            System.out.println("Database initialized");
+//        };
+//    }
 
 }

@@ -28,16 +28,18 @@ public interface StoryRepository extends JpaRepository<Story, Long> {
     @Query("select s from story s where upper(s.title) like upper(concat('%', ?1, '%'))")
     List<Story> findByTitleContainsIgnoreCase(String title);
 
-    // Tìm truyện theo thể loại
-    @Query("select s from story s inner join s.categories categories where categories.id = ?1")
-    List<Story> findAllByCategoryId(Long cId);
-
     // Tìm truyện theo ID
     Optional<Story> findById(Long id);
 
     // Tìm truyện theo trạng thái
     @Query("select s from story s where s.status = ?1")
     List<Story> findByStatus(Status status);
+
+    // Tìm truyện theo thể loại
+    @Query("select s from story s inner join s.categories categories where categories.id = ?1")
+    List<Story> findByCategoriesId(Long id);
+
+
 
 
 
