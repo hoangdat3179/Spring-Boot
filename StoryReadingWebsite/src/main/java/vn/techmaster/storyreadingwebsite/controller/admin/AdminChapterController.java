@@ -3,12 +3,15 @@ package vn.techmaster.storyreadingwebsite.controller.admin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import vn.techmaster.storyreadingwebsite.Service.StoryService;
-import vn.techmaster.storyreadingwebsite.entity.Story;
 import vn.techmaster.storyreadingwebsite.entity.Chapter;
-import vn.techmaster.storyreadingwebsite.repository.StoryRepository;
+import vn.techmaster.storyreadingwebsite.entity.Story;
 import vn.techmaster.storyreadingwebsite.repository.ChapterRepository;
+import vn.techmaster.storyreadingwebsite.repository.StoryRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -32,7 +35,7 @@ public class AdminChapterController{
         List<Chapter> listChapters = chapterRepo.findByStoryId(id);
         model.addAttribute("listChapters",listChapters);
         model.addAttribute("story", story);
-        return "/admin/book_detail";
+        return "book_detail";
     }
 
     //Thêm chương theo truyện id
@@ -49,7 +52,7 @@ public class AdminChapterController{
         Optional<Story> storyOptional = storyRepo.findById(id);
         model.addAttribute("story",storyOptional.get());
         model.addAttribute("chapter",new Chapter());
-        return "/admin/add_chapter";
+        return "add_chapter";
     }
 
 
@@ -60,7 +63,7 @@ public class AdminChapterController{
         Chapter chapter = chapterRepo.findById(chID).get();
         model.addAttribute("story", storyOptional);
         model.addAttribute("chapter", chapter);
-        return "/admin/add_chapter";
+        return "add_chapter";
     }
 
 

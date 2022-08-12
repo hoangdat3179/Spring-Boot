@@ -9,12 +9,11 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import vn.techmaster.storyreadingwebsite.Service.StoryService;
-import vn.techmaster.storyreadingwebsite.entity.Story;
 import vn.techmaster.storyreadingwebsite.entity.Category;
-import vn.techmaster.storyreadingwebsite.entity.Chapter;
+import vn.techmaster.storyreadingwebsite.entity.Story;
 import vn.techmaster.storyreadingwebsite.repository.CategoryRepository;
-import vn.techmaster.storyreadingwebsite.repository.StoryRepository;
 import vn.techmaster.storyreadingwebsite.repository.ChapterRepository;
+import vn.techmaster.storyreadingwebsite.repository.StoryRepository;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -53,11 +52,12 @@ public class AdminStoryController {
         List<Category> listCategories = categoryRepo.findAll();
         model.addAttribute("listCategories", listCategories);
         model.addAttribute("story", new Story());
-        return "/admin/add_story";
+        return "add_story";
     }
 
     @PostMapping("/stories/save")
-    public String saveBook(@RequestParam("fileImage") MultipartFile multipartFile, Story story) throws IOException {
+    public String saveBook(@RequestParam("fileImage") MultipartFile multipartFile, Story story,
+                           Model model,@Param("keyword") String keyword) throws IOException {
 
         String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
         story.setImage(fileName);
@@ -77,7 +77,7 @@ public class AdminStoryController {
             throw new IOException("Could not save uploaded file: " + fileName);
         }
 
-        return "redirect:/admin/stories";
+        return listByPage(model,1,keyword);
     }
 
 
@@ -88,7 +88,7 @@ public class AdminStoryController {
         List<Category> listCategories = categoryRepo.findAll();
         model.addAttribute("listCategories", listCategories);
         model.addAttribute("story", story);
-        return "/admin/add_story";
+        return "add_story";
     }
 
 
@@ -123,7 +123,7 @@ public class AdminStoryController {
         model.addAttribute("totalItems", totalItems);
         model.addAttribute("listStories", listStories);
         model.addAttribute("keyword", keyword);
-        return "/admin/stories";
+        return "stories";
     }
 
 }
