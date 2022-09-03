@@ -20,8 +20,9 @@ public class DatabaseLoader {
 
 //    @Bean
 //    public CommandLineRunner initializeDatabase() {
+//        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 //        return args -> {
-//            User user1 = new User("admin@gmail.com","admin", Role.ADMIN);
+//            User user1 = new User("admin@gmail.com", encoder.encode( "admin"), Role.ADMIN);
 //
 //            repo.saveAll(List.of(user1));
 //

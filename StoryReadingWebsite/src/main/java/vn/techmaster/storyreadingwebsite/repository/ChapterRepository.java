@@ -21,4 +21,7 @@ public interface ChapterRepository extends JpaRepository<Chapter, Long> {
     @Query("select c from chapter c where c.story.id = ?1 and c.id = ?2")
     Optional<Chapter> findChapterByStoryIdAndChapterId(Long bId, Long chId);
 
+    @Query("select count(c) from chapter c where c.story.id = ?1")
+    Long countChapterByStoryId(Long id);
+
 }

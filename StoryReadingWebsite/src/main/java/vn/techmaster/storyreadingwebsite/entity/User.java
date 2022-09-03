@@ -30,4 +30,13 @@ public class User {
         this.role = role;
     }
 
+    //Một User viết nhiều Comment
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.LAZY
+    )
+    @JoinColumn(name = "user_id")
+    private List<Comment> comments = new ArrayList<>();
+
 }

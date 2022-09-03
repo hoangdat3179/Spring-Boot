@@ -82,20 +82,26 @@
   <div class="container">
     <div class="row">
       <div class="d-flex justify-content-center ">
+        <a th:href="|/story/${story.id}/chapter/${chapter.id - 1}|"
+           class="btn btn-primary" th:classappend="${preChapter!=0} ? '': 'disabled'">Chương trước
+        </a>
         <div class="dropdown">
           <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Danh sách chương
           </a>
           <ul class="dropdown-menu" >
-            <li th:each="chapter : ${listChapters}" ><a class="dropdown-item" th:href="|/stories/${story.id}/chapter/${chapter.id}|" th:text="${chapter.title}"></a></li>
+            <li th:each="chapter : ${listChapters}" ><a class="dropdown-item" th:href="|/story/${story.id}/chapter/${chapter.id}|" th:text="${chapter.title}"></a></li>
           </ul>
         </div>
+        <a th:href="|/story/${story.id}/chapter/${chapter.id + 1}|"
+           class="btn btn-primary" th:classappend="${nextChapter!=0} ? '': 'disabled'">Chương sau
+        </a>
       </div>
     </div>
   </div>
   <div class="row m-5 d-block">
-    <p class="fst-normal lh-lg fs-5" th:text="${chapter.content}" >
-    </p>
+    <pre class="fst-normal lh-lg fs-5" th:text="${chapter.content}" style="white-space:pre-wrap">
+    </pre>
   </div>
 </div>
 <div>
